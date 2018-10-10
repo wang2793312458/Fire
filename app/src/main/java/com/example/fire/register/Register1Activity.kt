@@ -2,11 +2,7 @@ package com.example.fire.register
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.content.ContextCompat.startActivity
 import com.example.fire.R
-import com.example.fire.R.id.etCode
-import com.example.fire.R.id.etPhone
-import com.example.fire.R.id.tvCode
 import com.example.fire.common.CommonActivity
 import com.example.fire.common.Constants
 import kotlinx.android.synthetic.main.activity_register1.btnNext
