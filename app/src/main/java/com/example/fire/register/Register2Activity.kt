@@ -3,6 +3,8 @@ package com.example.fire.register
 import android.content.Context
 import android.os.Bundle
 import com.example.fire.R
+import com.example.fire.R.id.etPassword
+import com.example.fire.R.id.etPasswordAgain
 import com.example.fire.common.CommonActivity
 import com.example.fire.common.Constants
 import com.example.fire.common.http.setShowOrHidePassword
@@ -41,24 +43,16 @@ class Register2Activity : CommonActivity(), RegisterContract.View {
     }
   }
 
-  override fun getPhone(): String {
-    return phone
-  }
+  override fun getPhone(): String = phone
 
-  override fun getCode(): String {
-    return code
-  }
+  override fun getCode(): String = code
 
   override fun setCode(code: String) {
   }
 
-  override fun getPassWord(): String {
-    return etPassword.text.toString()
-  }
+  override fun getPassWord(): String = etPassword.text.toString()
 
-  override fun getPassWordAgain(): String {
-    return etPasswordAgain.text.toString()
-  }
+  override fun getPassWordAgain(): String = etPasswordAgain.text.toString()
 
   override fun showMessage(var1: String) {
     toast(var1)

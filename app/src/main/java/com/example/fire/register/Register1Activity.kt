@@ -2,7 +2,11 @@ package com.example.fire.register
 
 import android.content.Context
 import android.os.Bundle
+import android.support.v4.content.ContextCompat.startActivity
 import com.example.fire.R
+import com.example.fire.R.id.etCode
+import com.example.fire.R.id.etPhone
+import com.example.fire.R.id.tvCode
 import com.example.fire.common.CommonActivity
 import com.example.fire.common.Constants
 import kotlinx.android.synthetic.main.activity_register1.btnNext
@@ -37,9 +41,7 @@ class Register1Activity : CommonActivity(), RegisterContract.View {
     return etPhone.text.toString()
   }
 
-  override fun getCode(): String {
-    return etCode.text.toString()
-  }
+  override fun getCode(): String = etCode.text.toString()
 
   override fun setCode(code: String) {
     tvCode.text = code
@@ -60,6 +62,7 @@ class Register1Activity : CommonActivity(), RegisterContract.View {
   override fun setIsSelected(b: Boolean) {
     tvCode.isSelected = b
   }
+
   override fun showMessage(var1: String) {
     toast(var1)
   }
