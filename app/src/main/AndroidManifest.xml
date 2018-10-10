@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fire">
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+
+  <application
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme">
+    <activity
+        android:name=".splash.SplashActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/SplashTheme">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <!-- 首页 -->
+    <activity android:name=".common.MainActivity"/>
+    <!-- 注册 1 -->
+    <activity android:name=".register.Register1Activity"/>
+    <!-- 注册 2 -->
+    <activity android:name=".register.Register2Activity"/>
+    <!-- 登录 -->
+    <activity android:name=".login.LoginActivity"/>
+    <!-- 忘记密码 -->
+    <activity android:name=".forget.ForgetActivity"/>
+    <!-- 重置密码 -->
+    <activity android:name=".forget.ResetActivity"/>
+    <activity android:name=".mine.setUp.SetUpActivity">
+    </activity>
+    <activity android:name=".common.WebViewActivity">
+    </activity>
+    <activity android:name=".mine.feedBack.FeedbackActivity">
+    </activity>
+    <activity android:name=".mine.info.MineInfoActivity">
+    </activity>
+  </application>
+
+</manifest>

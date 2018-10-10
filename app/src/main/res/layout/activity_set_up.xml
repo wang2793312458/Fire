@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.baichang.firecontrol.mine.MineSetActivity">
+
+  <RelativeLayout style="@style/top_bar_layout">
+
+    <ImageButton
+        style="@style/top_bar_btn_left"
+        android:onClick="back"
+        android:src="@drawable/drw_button_back"
+        tools:ignore="OnClick" />
+
+    <TextView
+        style="@style/top_bar_title"
+        android:text="@string/set" />
+
+    <View style="@style/line_horizontal.title" />
+
+  </RelativeLayout>
+
+  <TextView
+      android:id="@+id/btnFeedback"
+      style="@style/mine_set_item_style"
+      android:layout_marginTop="10dp"
+      android:text="@string/feedback" />
+
+  <TextView
+      android:id="@+id/btnAbout"
+      style="@style/mine_set_item_style"
+      android:text="@string/about_us" />
+
+  <TextView
+      android:id="@+id/btnClear"
+      style="@style/mine_set_item_style"
+      android:text="@string/clear" />
+
+  <TextView
+      android:id="@+id/btnUpgrade"
+      style="@style/mine_set_item_style"
+      android:text="@string/check_upgrade" />
+
+  <TextView
+      android:id="@+id/btnContacts"
+      style="@style/mine_set_item_style"
+      android:text="@string/contacts_service" />
+
+  <Button
+      android:id="@+id/btnExit"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/button_height"
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="30dp"
+      android:layout_marginTop="20dp"
+      android:background="@drawable/shape_button_exit"
+      android:text="@string/exit_account"
+      android:textColor="@android:color/white"
+      android:textSize="@dimen/button_font_size" />
+</LinearLayout>
