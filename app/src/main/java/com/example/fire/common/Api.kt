@@ -3,15 +3,19 @@ package com.example.fire.common
 import com.example.fire.login.entity.LoginData
 import com.example.fire.message.entity.MessageData
 import com.example.fire.mine.fragment.entity.MineData
+import com.example.fire.xxxx.GankData
 import io.reactivex.Observable
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface Api {
   companion object {
     const val API_DEFAULT_HOST = "http://www.taoshunda.com:80/taoshundainter/mobile/"
     const val API_LOAD_IMAGE = "http://www.taoshunda.com:80/images/"
     const val API_UPLOAD_IMAGE = "http://www.taoshunda.com:80/fileupload/"
+    const val API_GANK_API = "http://gank.io/api/"
   }
 
   // 获取消息
@@ -50,4 +54,13 @@ interface Api {
   @POST("user/foreignPwd")
   fun getForeignPwd(@Body map: Map<String, String>): Observable<Boolean>
 
+  //分类数据: http://gank.io/api/data/数据类型/请求个数/第几页
+  //数据类型： 福利 | Android | iOS | 休息视频 | 拓展资源 | 前端 | all
+  //请求个数： 数字，大于0
+  //第几页：数字，大于0
+  @GET("data/{type}/{num}/{page}")
+  fun getGankData(
+    @Path("type") type: String,
+    @Path("num") num: String, @Path("page") page: String
+  ): Observable<ArrayList<GankData>>
 }

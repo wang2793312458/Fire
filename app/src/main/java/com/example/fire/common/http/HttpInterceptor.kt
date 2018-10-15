@@ -10,6 +10,7 @@ import java.io.EOFException
 import java.nio.charset.Charset
 import java.util.concurrent.TimeUnit
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 /**
  * @author by 王小智
  * Created on 2018/10/8.

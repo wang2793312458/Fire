@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.fire.R
+import com.example.fire.home.HomeFragment
 import com.example.fire.message.MessageFragment
 import com.example.fire.mine.fragment.MineFragment
 import kotlinx.android.synthetic.main.activity_main.tabhost
@@ -15,11 +16,14 @@ import org.jetbrains.anko.toast
 
 class MainActivity : CommonActivity() {
   //定义FragmentTabHost对象
-  private val mViewFrags = arrayOf<Class<*>>(MessageFragment::class.java, MineFragment::class.java)
+  private val mViewFrags = arrayOf<Class<*>>(
+      HomeFragment::class.java, MessageFragment::class.java, MineFragment::class.java
+  )
   //Tab图片
-  private val mImageViewArray = intArrayOf(R.drawable.tab_message, R.drawable.tab_mine)
+  private val mImageViewArray =
+    intArrayOf(R.drawable.tab_polling, R.drawable.tab_message, R.drawable.tab_mine)
   //Tab文字
-  private val mDataTv = intArrayOf(R.string.message, R.string.mine)
+  private val mDataTv = intArrayOf(R.string.home, R.string.message, R.string.mine)
   private var exitTime: Long = 0
 
   override fun getContentViewLayoutId(): Int {

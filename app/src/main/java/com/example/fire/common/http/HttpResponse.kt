@@ -8,4 +8,8 @@ data class HttpResponse(
   val state: Int,
   val res: HttpResponseData,
   val msg: String
+
+//  val error: Boolean,
+//  val results: Any
+
 )

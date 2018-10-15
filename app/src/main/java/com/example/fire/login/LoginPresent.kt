@@ -38,5 +38,15 @@ class LoginPresent(private val mView: LoginContract.View) : LoginContract.Presen
         }, {
           mView.showMessage(it.message!!)
         })
+
+//    HttpFactory.getInstance()      todo   调用这个接口   需要把HttpFactory   第22行的url更换
+//        .getGankData("福利", "10", "20")
+//        .compose(HttpFactory.schedulers())
+//        .doOnSubscribe { }
+//        .doFinally { }
+//        .subscribe({
+//
+//        })
+
   }
 }
