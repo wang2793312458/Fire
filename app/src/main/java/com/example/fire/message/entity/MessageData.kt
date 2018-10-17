@@ -5,5 +5,5 @@ data class MessageData(
   val picture: String,
   val id: Int,
   val title: String,
-  val remark: Int
+  val remark: String
 )

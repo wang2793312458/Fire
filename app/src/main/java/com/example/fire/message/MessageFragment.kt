@@ -1,10 +1,12 @@
 package com.example.fire.message
 
+import android.content.Context
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener
 import com.example.fire.R
 import com.example.fire.common.CommonFragment
 import kotlinx.android.synthetic.main.fragment_message.rvList
 import kotlinx.android.synthetic.main.fragment_message.srRefresh
+import org.jetbrains.anko.support.v4.act
 import org.jetbrains.anko.support.v4.toast
 
 class MessageFragment : CommonFragment(), MessageContract.View, OnRefreshListener {
@@ -17,7 +19,7 @@ class MessageFragment : CommonFragment(), MessageContract.View, OnRefreshListene
   override fun initData() {
     MessagePresent(this)
     mPresent.start()
-//    mPresent.attachRecyclerView(rvList)
+    mPresent.attachRecyclerView(rvList)
   }
 
   override fun showMessage(var1: String) {
@@ -39,4 +41,9 @@ class MessageFragment : CommonFragment(), MessageContract.View, OnRefreshListene
   override fun onRefresh() {
     mPresent.refresh()
   }
+
+  override fun getContext(): Context {
+    return act
+  }
+
 }

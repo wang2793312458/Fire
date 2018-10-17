@@ -1,6 +1,7 @@
 package com.example.fire.message
 
 import android.annotation.SuppressLint
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.example.fire.common.Constants
 import com.example.fire.common.http.HttpFactory
@@ -8,7 +9,7 @@ import com.example.fire.message.adapter.MessageAdapter
 import com.example.fire.utils.RecyclerViewUtil
 
 class MessagePresent(private val mView: MessageContract.View) : MessageContract.Present {
-  lateinit var mAdapter: MessageAdapter
+  private val mAdapter by lazy { MessageAdapter() }
   private var nowPage = 1
 
   init {
@@ -16,6 +17,7 @@ class MessagePresent(private val mView: MessageContract.View) : MessageContract.
   }
 
   override fun attachRecyclerView(recyclerView: RecyclerView) {
+    recyclerView.layoutManager = LinearLayoutManager(mView.getContext())
     recyclerView.adapter = mAdapter
     recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
       override fun onScrolled(
@@ -51,9 +53,9 @@ class MessagePresent(private val mView: MessageContract.View) : MessageContract.
         .compose(HttpFactory.schedulers())
         .subscribe({
           if (nowPage == 1) {
-            mAdapter!!.setList(it)
+            mAdapter.setList(it)
           } else {
-            mAdapter!!.addList(it)
+            mAdapter.addList(it)
           }
         }, {
           mView.showMessage(it.message!!)

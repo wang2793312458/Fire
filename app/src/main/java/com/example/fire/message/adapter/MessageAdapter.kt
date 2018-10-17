@@ -11,7 +11,6 @@ import com.example.fire.R
 import com.example.fire.common.Api
 import com.example.fire.message.adapter.MessageAdapter.MessageHolder
 import com.example.fire.message.entity.MessageData
-import kotlinx.android.synthetic.main.fragment_mine.view.tvName
 import kotlinx.android.synthetic.main.item_message.view.ivImage
 import kotlinx.android.synthetic.main.item_message.view.tvTitle
 
@@ -31,14 +30,18 @@ class MessageAdapter : RecyclerView.Adapter<MessageHolder>() {
     return list.size
   }
 
-  fun setList(list: ArrayList<MessageData>) {
-    this.list = list
-    notifyDataSetChanged()
+  fun setList(list: ArrayList<MessageData>?) {
+    list?.let {
+      this.list = list
+      notifyDataSetChanged()
+    }
   }
 
-  fun addList(list: ArrayList<MessageData>) {
-    this.list.addAll(list)
-    notifyDataSetChanged()
+  fun addList(list: ArrayList<MessageData>?) {
+    list?.let {
+      this.list.addAll(list)
+      notifyDataSetChanged()
+    }
   }
 
   override fun onBindViewHolder(
