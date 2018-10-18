@@ -42,6 +42,8 @@
     </activity>
     <activity android:name=".mine.info.MineInfoActivity">
     </activity>
+    <activity android:name=".mine.info.MineInfo2Activity">
+    </activity>
   </application>
 
 </manifest>

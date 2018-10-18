@@ -45,5 +45,4 @@ class MessageFragment : CommonFragment(), MessageContract.View, OnRefreshListene
   override fun getContext(): Context {
     return act
   }
-
 }

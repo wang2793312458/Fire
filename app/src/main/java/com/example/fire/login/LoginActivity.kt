@@ -1,5 +1,6 @@
 package com.example.fire.login
 
+import android.content.Context
 import android.os.Bundle
 import com.example.fire.R
 import com.example.fire.common.CommonActivity
@@ -19,6 +20,9 @@ import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 class LoginActivity : CommonActivity(), LoginContract.View {
+  override fun getContext(): Context {
+    return this
+  }
 
   override lateinit var mPresent: LoginContract.Present
   override fun getContentViewLayoutId(): Int {

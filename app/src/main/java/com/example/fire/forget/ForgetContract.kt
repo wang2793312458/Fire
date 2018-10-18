@@ -1,6 +1,5 @@
 package com.example.fire.forget
 
-import android.content.Context
 import com.example.fire.common.BasePresent
 import com.example.fire.common.CommonView
 
@@ -11,7 +10,6 @@ import com.example.fire.common.CommonView
 interface ForgetContract {
   interface View : CommonView<Present> {
     var mPresent: Present
-    fun getContext(): Context
     fun getPhone(): String
     fun getCode(): String
     fun getPassWord(): String

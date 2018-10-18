@@ -1,7 +1,5 @@
 package com.example.fire.home
 
-import android.os.Bundle
-import android.view.View
 import com.example.fire.R
 import com.example.fire.common.Api
 import com.example.fire.common.CommonFragment
@@ -19,14 +17,6 @@ class HomeFragment : CommonFragment() {
   }
 
   override fun initData() {
-
-  }
-
-  override fun onViewCreated(
-    view: View,
-    savedInstanceState: Bundle?
-  ) {
-    super.onViewCreated(view, savedInstanceState)
     val images = arrayListOf<String>()
     images.add(Api.API_LOAD_IMAGE + "20180921/153749393434637924/1537493951449.jpg")
     images.add(Api.API_LOAD_IMAGE + "20180921/153749396236722005/1537493995191.jpg")
@@ -35,4 +25,5 @@ class HomeFragment : CommonFragment() {
         .setIndicatorGravity(BannerConfig.CENTER)
         .start()
   }
+
 }

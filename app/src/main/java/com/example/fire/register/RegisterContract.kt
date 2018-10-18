@@ -1,6 +1,5 @@
 package com.example.fire.register
 
-import android.content.Context
 import com.example.fire.common.BasePresent
 import com.example.fire.common.CommonView
 
@@ -11,8 +10,6 @@ import com.example.fire.common.CommonView
 interface RegisterContract {
   interface View : CommonView<Present> {
     var mPresent: Present
-
-    fun getContext(): Context
     fun getPhone(): String
     fun getCode(): String
     fun setCode(code: String)
