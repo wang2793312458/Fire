@@ -4,6 +4,7 @@
 
   <uses-permission android:name="android.permission.INTERNET"/>
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.CALL_PHONE"/>
 
   <application
       android:allowBackup="true"
@@ -41,8 +42,6 @@
     <activity android:name=".mine.feedBack.FeedbackActivity">
     </activity>
     <activity android:name=".mine.info.MineInfoActivity">
-    </activity>
-    <activity android:name=".mine.info.MineInfo2Activity">
     </activity>
   </application>
 

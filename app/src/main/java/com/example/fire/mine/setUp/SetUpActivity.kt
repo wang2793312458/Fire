@@ -1,5 +1,6 @@
 package com.example.fire.mine.setUp
 
+import android.content.Context
 import android.os.Bundle
 import com.example.fire.R
 import com.example.fire.common.ActivityCollector
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_set_up.btnContacts
 import kotlinx.android.synthetic.main.activity_set_up.btnExit
 import kotlinx.android.synthetic.main.activity_set_up.btnFeedback
 import kotlinx.android.synthetic.main.activity_set_up.btnUpgrade
+import org.jetbrains.anko.act
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.appcompat.v7.Appcompat
 import org.jetbrains.anko.cancelButton
@@ -23,22 +25,24 @@ import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
-class SetUpActivity : CommonActivity() {
+class SetUpActivity : CommonActivity(), SetUpContract.View {
+  override lateinit var mPresent: SetUpContract.Present
 
-  private var url: String? = null
+  private var mUrl: String? = null
   private var servicePhone: String? = null
   override fun getContentViewLayoutId(): Int {
     return R.layout.activity_set_up
   }
 
   override fun initData(savedInstanceState: Bundle?) {
-    getAboutUS()
+    SetUpPresent(this)
+    mPresent.start()
     btnAbout.onClick {
-      url?.let {
-        startActivity<WebViewActivity>(
-            Constants.INTENT_WEB_VIEW_TITLE to "关于我们",
-            Constants.INTENT_WEB_URL to it
-        )
+            mUrl?.let {
+      startActivity<WebViewActivity>(
+          Constants.INTENT_WEB_VIEW_TITLE to "关于我们",
+          Constants.INTENT_WEB_URL to mUrl
+      )
       }
     }
     btnClear.onClick {
@@ -46,7 +50,7 @@ class SetUpActivity : CommonActivity() {
 //            ToolsUtil.clearAllCache(getActivity(), getString(R.string.tips_clear_success))
     }
     btnContacts.onClick {
-      servicePhone?.let { makeCall(it) }
+      servicePhone?.let { makeCall(servicePhone!!) }
     }
     btnExit.onClick {
       exit()
@@ -55,11 +59,33 @@ class SetUpActivity : CommonActivity() {
       startActivity<FeedbackActivity>()
     }
     btnUpgrade.onClick {
-      upgrade()
+      mPresent.upgrade()
     }
   }
 
-  private fun getAboutUS() {
+  override fun showMessage(var1: String) {
+
+  }
+
+  override fun showMessage(var1: Int) {
+  }
+
+  override fun showProgress() {
+  }
+
+  override fun hideProgress() {
+  }
+
+  override fun getActOrCtx(): Context {
+    return act
+  }
+
+  override fun setWebUrl(url: String) {
+    mUrl = url
+  }
+
+  override fun setPhone(phone: String) {
+    servicePhone = phone
   }
 
   private fun exit() {
@@ -72,8 +98,5 @@ class SetUpActivity : CommonActivity() {
       cancelButton {
       }
     }.show()
-  }
-
-  private fun upgrade() {
   }
 }
