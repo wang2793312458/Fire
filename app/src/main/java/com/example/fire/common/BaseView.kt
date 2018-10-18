@@ -1,5 +1,7 @@
 package com.example.fire.common
 
+import android.content.Context
+
 interface BaseView {
      fun showMessage(var1: String)
 
@@ -8,4 +10,6 @@ interface BaseView {
      fun showProgress()
 
      fun hideProgress()
+
+     fun getActOrCtx(): Context
 }

@@ -2,6 +2,8 @@ package com.example.fire.register
 
 import android.content.Context
 import android.os.Bundle
+import android.view.View
+import android.view.View.OnClickListener
 import com.example.fire.R
 import com.example.fire.common.CommonActivity
 import com.example.fire.common.Constants
@@ -13,8 +15,12 @@ import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
-class Register1Activity : CommonActivity(), RegisterContract.View {
-  override fun getContext(): Context {
+class Register1Activity : CommonActivity(), RegisterContract.View ,OnClickListener{
+  override fun onClick(p0: View?) {
+
+  }
+
+  override fun getActOrCtx(): Context {
     return this
   }
 
@@ -25,9 +31,12 @@ class Register1Activity : CommonActivity(), RegisterContract.View {
 
   override fun initData(savedInstanceState: Bundle?) {
     RegisterPresent(this)
-    tvCode.onClick {
+    tvCode.setOnClickListener {
       mPresent.getCode()
     }
+//    tvCode.onClick {
+//      mPresent.getCode()
+//    }
     btnNext.onClick {
       mPresent.checkCode()
     }

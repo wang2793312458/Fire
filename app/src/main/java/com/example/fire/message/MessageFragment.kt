@@ -6,7 +6,7 @@ import com.example.fire.R
 import com.example.fire.common.CommonFragment
 import kotlinx.android.synthetic.main.fragment_message.rvList
 import kotlinx.android.synthetic.main.fragment_message.srRefresh
-import org.jetbrains.anko.support.v4.act
+import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.toast
 
 class MessageFragment : CommonFragment(), MessageContract.View, OnRefreshListener {
@@ -42,7 +42,7 @@ class MessageFragment : CommonFragment(), MessageContract.View, OnRefreshListene
     mPresent.refresh()
   }
 
-  override fun getContext(): Context {
-    return act
+  override fun getActOrCtx(): Context {
+    return ctx
   }
 }

@@ -30,7 +30,7 @@ class ForgetActivity : CommonActivity(), ForgetContract.View {
     }
   }
 
-  override fun getContext(): Context {
+  override fun getActOrCtx(): Context {
     return this
   }
 

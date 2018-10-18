@@ -14,14 +14,15 @@ import kotlinx.android.synthetic.main.activity_login.button_register
 import kotlinx.android.synthetic.main.activity_login.cbPassword
 import kotlinx.android.synthetic.main.activity_login.etPassword
 import kotlinx.android.synthetic.main.activity_login.etPhone
+import org.jetbrains.anko.act
 import org.jetbrains.anko.sdk25.coroutines.onCheckedChange
 import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 class LoginActivity : CommonActivity(), LoginContract.View {
-  override fun getContext(): Context {
-    return this
+  override fun getActOrCtx(): Context {
+    return act
   }
 
   override lateinit var mPresent: LoginContract.Present

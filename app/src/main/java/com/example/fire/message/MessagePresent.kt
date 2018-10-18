@@ -17,7 +17,7 @@ class MessagePresent(private val mView: MessageContract.View) : MessageContract.
   }
 
   override fun attachRecyclerView(recyclerView: RecyclerView) {
-    recyclerView.layoutManager = LinearLayoutManager(mView.getContext())
+    recyclerView.layoutManager = LinearLayoutManager(mView.getActOrCtx())
     recyclerView.adapter = mAdapter
     recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
       override fun onScrolled(

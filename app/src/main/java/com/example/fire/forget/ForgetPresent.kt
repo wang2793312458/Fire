@@ -22,7 +22,7 @@ class ForgetPresent(private val mView: ForgetContract.View) : ForgetContract.Pre
         mView.setIsClickable(false)
         mView.setIsSelected(true)
         mView.setCode(
-            mView.getContext().getString(R.string.get_code_time, millisUntilFinished / 1000)
+            mView.getActOrCtx().getString(R.string.get_code_time, millisUntilFinished / 1000)
         )
       }
 

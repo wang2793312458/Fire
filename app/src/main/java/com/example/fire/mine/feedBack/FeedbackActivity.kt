@@ -1,13 +1,49 @@
 package com.example.fire.mine.feedBack
 
-import android.support.v7.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
 import com.example.fire.R
+import com.example.fire.common.CommonActivity
+import kotlinx.android.synthetic.main.activity_feedback.btnSubmit
+import kotlinx.android.synthetic.main.activity_feedback.etContent
+import org.jetbrains.anko.sdk25.coroutines.onClick
 
-class FeedbackActivity : AppCompatActivity() {
+class FeedbackActivity : CommonActivity(), FeedBackContract.View {
 
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_feedback)
+  override lateinit var mPresent: FeedBackContract.Present
+
+  override fun getContentViewLayoutId(): Int {
+    return R.layout.activity_feedback
+  }
+
+  override fun initData(savedInstanceState: Bundle?) {
+    FeedBackPresent(this)
+    btnSubmit.onClick {
+      mPresent.feedback()
+    }
+  }
+
+  override fun getContent(): String {
+    return etContent.text.toString()
+  }
+
+  override fun getActOrCtx(): Context {
+    return this
+  }
+
+  override fun showMessage(var1: String) {
+
+  }
+
+  override fun showMessage(var1: Int) {
+
+  }
+
+  override fun showProgress() {
+
+  }
+
+  override fun hideProgress() {
+
   }
 }

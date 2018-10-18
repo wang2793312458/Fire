@@ -22,7 +22,7 @@ class Register2Activity : CommonActivity(), RegisterContract.View {
   private var phone: String = ""
   private var code: String = ""
   override lateinit var mPresent: RegisterContract.Present
-  override fun getContext(): Context {
+  override fun getActOrCtx(): Context {
     return this
   }
 
