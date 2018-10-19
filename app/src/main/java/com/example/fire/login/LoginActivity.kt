@@ -56,11 +56,11 @@ class LoginActivity : CommonActivity(), LoginContract.View {
   }
 
   override fun showProgress() {
-
+    showLoading()
   }
 
   override fun hideProgress() {
-
+    showContent()
   }
 
   override fun getPhone(): String {

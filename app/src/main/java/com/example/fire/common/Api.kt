@@ -3,6 +3,7 @@ package com.example.fire.common
 import com.example.fire.login.entity.LoginData
 import com.example.fire.message.entity.MessageData
 import com.example.fire.mine.fragment.entity.MineData
+import com.example.fire.mine.info.entity.MineInfoData
 import com.example.fire.mine.setUp.entity.AboutData
 import com.example.fire.mine.setUp.entity.UpgradeData
 import com.example.fire.mine.setUp.entity.MobilesData
@@ -38,7 +39,7 @@ interface Api {
   @POST("user/register")
   fun getRegister(@Body map: Map<String, String>): Observable<LoginData>
 
-  //个人详情页面
+  //我的页面
   @POST("user/getUserInfo")
   fun getUserInfo(@Body map: Map<String, String>): Observable<MineData>
 
@@ -69,5 +70,9 @@ interface Api {
   // 检查更新
   @POST("sys/checkAppVersion")
   fun upgrade(@Body map: Map<String, String>): Observable<UpgradeData>
+
+  //个人详情页面
+  @POST("user/getUserInfo")
+  fun getUserInfoDetail(@Body map: Map<String, String>): Observable<MineInfoData>
 
 }

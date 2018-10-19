@@ -4,39 +4,60 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v4.app.FragmentActivity
 import android.view.View
+import com.example.fire.widget.MultipleStateView
 
 @SuppressLint("Registered")
 abstract class CommonActivity : FragmentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        initView()
-        initData(savedInstanceState)
+
+  private lateinit var mMultipleStateView: MultipleStateView
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    initView()
+    initData(savedInstanceState)
+  }
+
+  /**
+   * 获取当前布局id
+   */
+  abstract fun getContentViewLayoutId(): Int
+
+  abstract fun initData(savedInstanceState: Bundle?)
+
+  private fun initView() {
+    ActivityCollector.addActivity(this)
+    //添加相应的布局
+    if (getContentViewLayoutId() != 0) {
+      mMultipleStateView = MultipleStateView(this)
+      val view = View.inflate(this, getContentViewLayoutId(), mMultipleStateView)
+      setContentView(view)
+    } else {
+      throw  IllegalArgumentException("You must return layout id")
     }
+  }
 
-    /**
-     * 获取当前布局id
-     */
-    abstract fun getContentViewLayoutId(): Int
+  fun back(v: View) {
+    onBackPressed()
+  }
 
-    abstract fun initData(savedInstanceState: Bundle?)
+  override fun onDestroy() {
+    super.onDestroy()
+    ActivityCollector.removeActivity(this)
+  }
 
-    private fun initView() {
-        ActivityCollector.addActivity(this)
-        //添加相应的布局
-        if (getContentViewLayoutId() != 0) {
-            val view = View.inflate(this, getContentViewLayoutId(), null)
-            setContentView(view)
-        } else {
-            throw  IllegalArgumentException("You must return layout id")
-        }
-    }
+  fun showLoading() {
+    mMultipleStateView.showLoading()
+  }
 
-    fun back(v: View) {
-        onBackPressed()
-    }
+  fun showNetError(onClickListener: View.OnClickListener) {
+    mMultipleStateView.showNetError(onClickListener)
+  }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        ActivityCollector.removeActivity(this)
-    }
+  fun showEmpty(onClickListener: View.OnClickListener) {
+    mMultipleStateView.showEmpty(onClickListener)
+  }
+
+  fun showContent() {
+    mMultipleStateView.showContent()
+  }
 }

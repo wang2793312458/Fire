@@ -30,8 +30,8 @@ class LoginPresent(private val mView: LoginContract.View) : LoginContract.Presen
     HttpFactory.getInstance()
         .login(mapOf("phone" to mView.getPhone(), "password" to mView.getPwd(), "type" to "1"))
         .compose(HttpFactory.schedulers())
-        .doOnSubscribe { }
-        .doFinally { }
+        .doOnSubscribe { mView.showProgress() }
+        .doFinally { mView.hideProgress() }
         .subscribe({
           mView.showMessage(R.string.tips_success_login)
           mView.jumpMainActivity()
