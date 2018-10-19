@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:descendantFocusability="afterDescendants"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/address_tv_isDefault_tip"
+                android:layout_width="30dp"
+                android:layout_height="18dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/drw_address"
+                android:gravity="center"
+                android:text="默认"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_13" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/font_color_black"
+                android:textSize="@dimen/font_size_14" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:textColor="#262626"
+            android:textSize="@dimen/font_size_14" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text=""
+        android:textColor="@color/font_color_black"
+        android:textSize="@dimen/font_size_12" />
+
+    <View
+        style="@style/line_horizontal"
+        android:layout_marginTop="10dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/linIsDefault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:background="@drawable/drw_cb_address_default"
+                android:button="@null"
+                android:checked="true"
+                android:clickable="false" />
+
+            <TextView
+                android:id="@+id/tvIsDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/str_default_address_now"
+                android:textColor="@color/font_color_black"
+                android:textSize="@dimen/font_size_14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/mine_icon_edit"
+                android:drawablePadding="4dp"
+                android:text="@string/str_compile"
+                android:textColor="@color/font_color_black"
+                android:textSize="@dimen/font_size_12" />
+
+            <TextView
+                android:id="@+id/tvDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:drawableLeft="@mipmap/mine_icon_delete"
+                android:drawablePadding="4dp"
+                android:text="@string/str_delete"
+                android:textColor="@color/font_color_black"
+                android:textSize="@dimen/font_size_14" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.fire.home
 
+import android.support.v7.widget.RecyclerView
 import com.example.fire.common.BasePresent
 import com.example.fire.common.CommonView
 
@@ -9,10 +10,10 @@ import com.example.fire.common.CommonView
  */
 interface HomeContract {
   interface View : CommonView<Present> {
-    val mPresent: Present
+    var mPresent: Present
   }
 
   interface Present : BasePresent {
-
+    fun attachRecyclerView(recyclerView: RecyclerView)
   }
 }
