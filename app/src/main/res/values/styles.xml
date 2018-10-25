@@ -193,5 +193,13 @@
     <style name="grade_fire_tv_style.font_size">
         <item name="android:textSize">@dimen/font_size_13</item>
     </style>
-
+    <style name="cm_list_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:dividerHeight">0.8dp</item>
+        <item name="android:divider">@color/cm_line_horizontal</item>
+    </style>
 </resources>

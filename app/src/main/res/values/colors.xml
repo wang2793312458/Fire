@@ -39,4 +39,14 @@
 
     <color name="get_verify_text_selected">#C1C1C1</color>
     <color name="get_verify_text_normal">#FFFF4611</color>
+
+    <color name="cm_line_horizontal">#D3D3D3</color>
+
+    <color name="black1">#3c3c3c</color>
+    <color name="black2">#727272</color>
+    <color name="black3">#979797</color>
+    <color name="black4">#d1d1d1</color>
+    <color name="black5">#eaeaea</color>
+
+
 </resources>
