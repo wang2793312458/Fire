@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.example.fire.common.http.HttpFactory
 import com.example.fire.mine.address.list.adapter.MineAddressListAdapter
+import com.example.fire.mine.address.list.adapter.MineAddressListAdapter.onKotlinItemClickListener
 
 /**
  * @author by 王小智
@@ -39,5 +40,10 @@ class MineAddressListPresent(private val mView: MineAddressListContract.View) : 
     override fun attachRecyclerView(recyclerView: RecyclerView) {
         recyclerView.layoutManager = LinearLayoutManager(mView.getActOrCtx())
         recyclerView.adapter = mAdapter
+        mAdapter.setOnItemClickListener(object : onKotlinItemClickListener {
+            override fun delete(position: Int) {
+
+            }
+        })
     }
 }

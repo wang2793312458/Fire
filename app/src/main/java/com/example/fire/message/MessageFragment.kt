@@ -4,8 +4,7 @@ import android.content.Context
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener
 import com.example.fire.R
 import com.example.fire.common.CommonFragment
-import kotlinx.android.synthetic.main.fragment_message.rvList
-import kotlinx.android.synthetic.main.fragment_message.srRefresh
+import kotlinx.android.synthetic.main.include_recycle_refresh.*
 import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.toast
 

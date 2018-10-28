@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nsv_shop_detail_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black1"
+                android:textSize="@dimen/font_size_15"
+                android:typeface="monospace" />
+
+            <TextView
+                android:id="@+id/tv_store_mouth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="0件商品 | 月售0份 | 0km | 配送¥0"
+                android:textColor="@color/black3"
+                android:textSize="@dimen/font_size_11" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="公告"
+            android:textColor="@color/black1"
+            android:textSize="@dimen/font_size_14" />
+
+        <TextView
+            android:id="@+id/tv_action_notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="暂无"
+            android:textSize="@dimen/font_size_12" />
+
+        <TextView
+            android:id="@+id/tv_action_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="活动"
+            android:textColor="@color/black1"
+            android:textSize="@dimen/font_size_14"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/rl_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/ll_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/tv_action_num"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/tv_action_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="0个活动"
+                android:textColor="@color/black3"
+                android:textSize="@dimen/font_size_12" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="商家信息"
+            android:textColor="@color/black1"
+            android:textSize="@dimen/font_size_14" />
+
+        <GridView
+            android:id="@+id/gv_store_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="4" />
+
+        <TextView
+            android:id="@+id/tv_store_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:autoLink="phone"
+            android:lines="1"
+            android:text="电话："
+            android:textColor="@color/black3"
+            android:textColorLink="#6AC2F2"
+            android:textSize="@dimen/font_size_13" />
+
+        <TextView
+            android:id="@+id/tv_store_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="4dp"
+            android:text="地址："
+            android:textColor="@color/black3"
+            android:textSize="@dimen/font_size_13" />
+
+        <TextView
+            android:id="@+id/tv_store_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="6dp"
+            android:lines="1"
+            android:text="营业时间：00:00 至 00:00"
+            android:textColor="@color/black3"
+            android:textSize="@dimen/font_size_13" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="食品安全监督公示"
+            android:textColor="@color/black1"
+            android:textSize="@dimen/font_size_14" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_service_grade"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/tv_store_grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:lines="1"
+                android:text="检查结果：B"
+                android:textColor="@color/black3"
+                android:textSize="@dimen/font_size_13" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_store_unit_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:lines="1"
+            android:text="单位名称："
+            android:textColor="@color/black3"
+            android:textSize="@dimen/font_size_13" />
+
+        <TextView
+            android:id="@+id/tv_store_unit_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="4dp"
+            android:text="经营地址："
+            android:textColor="@color/black3"
+            android:textSize="@dimen/font_size_13" />
+
+        <TextView
+            android:id="@+id/tv_store_unit_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:lines="1"
+            android:text="法定代表人："
+            android:textColor="@color/black3"
+            android:textSize="@dimen/font_size_13" />
+
+        <TextView
+            android:id="@+id/tv_store_unit_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:lines="1"
+            android:text="经营许可：JY2837482364"
+            android:textColor="@color/black3"
+            android:textSize="@dimen/font_size_13" />
+
+        <TextView
+            android:id="@+id/tv_store_unit_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:lines="1"
+            android:text="有效期："
+            android:textColor="@color/black3"
+            android:textSize="@dimen/font_size_13" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="商家从业资质"
+            android:textColor="@color/black1"
+            android:textSize="@dimen/font_size_14" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <ImageView
+                android:id="@+id/iv_store_1"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/iv_store_2"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_bg_white"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
