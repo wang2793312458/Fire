@@ -45,8 +45,8 @@ class MessagePresent(private val mView: MessageContract.View) : MessageContract.
         HttpFactory.getInstance()
                 .getMsg(mapOf("userId" to "235", "nowPage" to nowPage.toString()))
                 .compose(HttpFactory.schedulers())
-                .doOnSubscribe { }
-                .doFinally { }
+                .doOnSubscribe { mView.showProgress() }
+                .doFinally { mView.hideProgress() }
                 .subscribe({
                     if (nowPage == 1) {
                         mAdapter.setList(it)

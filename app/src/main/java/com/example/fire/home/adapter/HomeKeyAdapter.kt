@@ -11,8 +11,6 @@ import com.example.fire.R
 import com.example.fire.common.Api
 import com.example.fire.home.adapter.HomeKeyAdapter.HomeKeyViewHold
 import com.example.fire.home.entity.HomeKeyData
-import com.example.fire.message.entity.MessageData
-import kotlinx.android.synthetic.main.activity_forget.view.*
 import kotlinx.android.synthetic.main.item_message.view.*
 
 /**

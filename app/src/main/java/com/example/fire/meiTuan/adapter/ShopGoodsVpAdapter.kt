@@ -12,17 +12,15 @@ import com.example.fire.meiTuan.fragment.ShopGoodsFragment
  */
 class ShopGoodsVpAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
 
-
     override fun getCount(): Int {
         return 2
     }
 
     override fun getItem(p0: Int): Fragment {
-//        return if (p0 == 0) {
-//            ShopGoodsFragment.getInstance("")
-//        } else {
-//            EvaluateFragment.getInstance("")
-//        }
-//        return ShopGoodsFragment
+        return if (p0 == 0) {
+            ShopGoodsFragment()
+        } else {
+            EvaluateFragment()
+        }
     }
 }

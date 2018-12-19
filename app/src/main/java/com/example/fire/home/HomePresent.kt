@@ -14,6 +14,7 @@ import com.example.fire.utils.RecyclerViewUtil
  */
 class HomePresent(private val mView: HomeContract.View) : HomeContract.Present {
     private val mAdapter by lazy { HomeKeyAdapter() }
+    private var nowPage = 1
 
     init {
         mView.mPresent = this
@@ -22,12 +23,16 @@ class HomePresent(private val mView: HomeContract.View) : HomeContract.Present {
     @SuppressLint("CheckResult")
     override fun start() {
         HttpFactory.getInstance()
-                .getHomePageType(mapOf("cityId" to "4", "nowPage" to "1"))
+                .getHomePageType(mapOf("cityId" to "4", "nowPage" to "" + nowPage))
                 .compose(HttpFactory.schedulers())
                 .doOnSubscribe { }
                 .doFinally { }
                 .subscribe({
-                    mAdapter.setList(it)
+                    if (nowPage == 1) {
+                        mAdapter.setList(it)
+                    } else {
+                        mAdapter.addList(it)
+                    }
                 }, {
                     mView.showMessage(it.message!!)
                 })
@@ -41,7 +46,8 @@ class HomePresent(private val mView: HomeContract.View) : HomeContract.Present {
                 super.onScrolled(recyclerView, dx, dy)
                 if (RecyclerViewUtil.isScrollBottom(recyclerView) &&
                         recyclerView.adapter!!.itemCount % Constants.PAGE_SIZE == 0) {
-//                    getMsgList()
+                    nowPage++
+                    start()
                 }
             }
         })
