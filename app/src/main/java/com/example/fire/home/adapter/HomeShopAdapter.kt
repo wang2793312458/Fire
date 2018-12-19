@@ -40,8 +40,14 @@ class HomeShopAdapter : RecyclerView.Adapter<HomeShopAdapter.HomeShopViewHold>()
 
     override fun onBindViewHolder(holder: HomeShopViewHold, p1: Int) {
         val data = mList[p1]
-        holder.itemView.tv_shop_name.text = "测试"
+        holder.itemView.tv_shop_name.text = "亮哥麻辣烫"
         holder.itemView.tv_shop_km.text = "" + data.id
+        holder.itemView.tv_shop_min.text = "10分钟"
+        holder.itemView.tv_shop_goods_num.text = "10件商品"
+        holder.itemView.tv_shop_goods_sale.text = "月售20份"
+        holder.itemView.tv_shop_send_price.text = "配送¥10"
+        holder.itemView.tv_shop_send_goods_price.text = "起送¥10"
+
 
     }
 

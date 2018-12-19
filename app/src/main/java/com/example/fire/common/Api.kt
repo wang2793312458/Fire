@@ -1,6 +1,7 @@
 package com.example.fire.common
 
 import com.example.fire.home.entity.HomeKeyData
+import com.example.fire.home.entity.HomeShopData
 import com.example.fire.login.entity.LoginData
 import com.example.fire.message.entity.MessageData
 import com.example.fire.mine.address.entity.MineAddressData
@@ -80,6 +81,10 @@ interface Api {
     //首页轮播图下方关键字
     @POST("homopage/getHomePageType")
     fun getHomePageType(@Body map: Map<String, String>): Observable<ArrayList<HomeKeyData>>
+
+    //首页商家列表
+    @POST("homopage/getRecommendBussiness")
+    fun getHomeShopList(@Body map: Map<String, String>): Observable<ArrayList<HomeShopData>>
 
     //地址列表
     @POST("address/getAddressList")
