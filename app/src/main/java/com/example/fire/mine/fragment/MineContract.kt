@@ -8,14 +8,14 @@ import com.example.fire.common.CommonView
  * Created on 2018/10/9.
  */
 interface MineContract {
-  interface View : CommonView<Present> {
-    var mPresent: Present
-    fun setName(name: String)
-    fun setHeadPic(headPic: String)
-    fun setSex(id: Int)
-  }
+    interface View : CommonView<Present> {
+        var mPresent: Present
+        fun setName(name: String)
+        fun setHeadPic(headPic: String)
+        fun setSex(id: Int)
+    }
 
-  interface Present : BasePresent {
+    interface Present : BasePresent {
 
-  }
+    }
 }

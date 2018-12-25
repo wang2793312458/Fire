@@ -10,23 +10,23 @@ import com.example.fire.mine.fragment.MineContract.View
  * Created on 2018/10/9.
  */
 class MinePresent(private val mView: View) : Present {
-  init {
-    mView.mPresent = this
-  }
+    init {
+        mView.mPresent = this
+    }
 
-  @SuppressLint("CheckResult")
-  override fun start() {
-    HttpFactory.getInstance()
-        .getUserInfo(mapOf("userId" to "235"))
-        .compose(HttpFactory.schedulers())
-        .doOnSubscribe { }
-        .doFinally { }
-        .subscribe({
-          mView.setName(it.name)
-          mView.setHeadPic(it.headPic)
-          mView.setSex(it.id)
-        }, {
-          mView.showMessage(it.message!!)
-        })
-  }
+    @SuppressLint("CheckResult")
+    override fun start() {
+        HttpFactory.getInstance()
+                .getUserInfo(mapOf("userId" to "235"))
+                .compose(HttpFactory.schedulers())
+                .doOnSubscribe { }
+                .doFinally { }
+                .subscribe({
+                    mView.setName(it.name)
+                    mView.setHeadPic(it.headPic)
+                    mView.setSex(it.id)
+                }, {
+                    mView.showMessage(it.message!!)
+                })
+    }
 }

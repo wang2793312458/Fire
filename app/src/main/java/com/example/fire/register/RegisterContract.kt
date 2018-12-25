@@ -8,22 +8,22 @@ import com.example.fire.common.CommonView
  * Created on 2018/10/9.
  */
 interface RegisterContract {
-  interface View : CommonView<Present> {
-    var mPresent: Present
-    fun getPhone(): String
-    fun getCode(): String
-    fun setCode(code: String)
-    fun getPassWord(): String
-    fun getPassWordAgain(): String
-    fun jumpNext()
-    fun setIsClickable(b: Boolean)
-    fun setIsSelected(b: Boolean)
+    interface View : CommonView<Present> {
+        var mPresent: Present
+        fun getPhone(): String
+        fun getCode(): String
+        fun setCode(code: String)
+        fun getPassWord(): String
+        fun getPassWordAgain(): String
+        fun jumpNext()
+        fun setIsClickable(b: Boolean)
+        fun setIsSelected(b: Boolean)
 
-  }
+    }
 
-  interface Present : BasePresent {
-    fun getCode()
-    fun checkCode()
-    fun getRegister()
-  }
+    interface Present : BasePresent {
+        fun getCode()
+        fun checkCode()
+        fun getRegister()
+    }
 }

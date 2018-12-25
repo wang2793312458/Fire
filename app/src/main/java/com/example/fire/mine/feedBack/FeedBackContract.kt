@@ -8,12 +8,12 @@ import com.example.fire.common.CommonView
  * Created on 2018/10/18.
  */
 interface FeedBackContract {
-  interface View : CommonView<Present> {
-    var mPresent: Present
-    fun getContent(): String
-  }
+    interface View : CommonView<Present> {
+        var mPresent: Present
+        fun getContent(): String
+    }
 
-  interface Present : BasePresent {
-    fun feedback()
-  }
+    interface Present : BasePresent {
+        fun feedback()
+    }
 }
