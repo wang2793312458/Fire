@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="request_dialog_style" parent="Theme.AppCompat.Dialog">
+    <style name="request_dialog_style" parent="Base.Theme.AppCompat.Dialog">
         <item name="android:backgroundDimEnabled">false</item>
         <!--<item name="colorAccent">@android:color/darker_gray</item>-->
         <item name="android:windowBackground">@android:color/transparent</item>
