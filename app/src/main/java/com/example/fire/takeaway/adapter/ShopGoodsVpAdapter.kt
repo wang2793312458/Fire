@@ -1,8 +1,8 @@
-package com.example.fire.meiTuan.adapter
+package com.example.fire.takeaway.adapter
 
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.fire.meiTuan.fragment.EvaluateFragment
-import com.example.fire.meiTuan.fragment.ShopGoodsFragment
+import com.example.fire.takeaway.fragment.EvaluateFragment
+import com.example.fire.takeaway.fragment.ShopGoodsFragment
 
 /**
  * @author by 王小智

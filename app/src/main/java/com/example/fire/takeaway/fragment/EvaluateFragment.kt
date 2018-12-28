@@ -1,4 +1,4 @@
-package com.example.fire.meiTuan.fragment
+package com.example.fire.takeaway.fragment
 
 import com.example.fire.R
 import com.example.fire.common.CommonFragment

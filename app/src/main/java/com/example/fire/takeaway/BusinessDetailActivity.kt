@@ -1,4 +1,4 @@
-package com.example.fire.meiTuan
+package com.example.fire.takeaway
 
 import android.content.Context
 import android.graphics.Color
@@ -7,11 +7,11 @@ import android.view.View
 import android.widget.RelativeLayout
 import com.example.fire.R
 import com.example.fire.common.CommonActivity
-import com.example.fire.meiTuan.adapter.ShopGoodsVpAdapter
+import com.example.fire.takeaway.adapter.ShopGoodsVpAdapter
+import com.example.fire.utils.ViewPagerHelper
 import kotlinx.android.synthetic.main.activity_business_detail.*
 import kotlinx.android.synthetic.main.include_shop_goods_bottom.*
 import kotlinx.android.synthetic.main.include_shop_goods_buy_car.*
-import net.lucode.hackware.magicindicator.ViewPagerHelper
 import net.lucode.hackware.magicindicator.buildins.UIUtil
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter

@@ -45,7 +45,7 @@
             android:name=".mine.address.list.MineAddressListActivity"
             android:label="@string/title_activity_mine_address_list"
             android:theme="@style/AppTheme" />
-        <activity android:name=".meiTuan.BusinessDetailActivity" />
+        <activity android:name=".takeaway.BusinessDetailActivity" />
     </application>
 
 </manifest>
