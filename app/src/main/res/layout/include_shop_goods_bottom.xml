@@ -3,8 +3,8 @@
     android:id="@+id/fl_shop_goods_bottom"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:layout_gravity="bottom"
-    android:layout_alignParentBottom="true">
+    android:layout_alignParentBottom="true"
+    android:layout_gravity="bottom">
 
     <View
         android:layout_width="match_parent"
@@ -27,8 +27,8 @@
                 android:id="@+id/iv_buy_car_goods_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scaleType="centerInside"
-                android:background="@drawable/tab_icon_shopping_car"/>
+                android:background="@drawable/tab_icon_shopping_car"
+                android:scaleType="centerInside" />
 
             <TextView
                 android:id="@+id/tv_buy_car_goods_num"

@@ -8,13 +8,13 @@ import com.example.fire.common.CommonView
  * Created on 2018/10/18.
  */
 interface SetUpContract {
-  interface View : CommonView<Present> {
-    var mPresent: Present
-    fun setWebUrl(url: String)
-    fun setPhone(phone: String)
-  }
+    interface View : CommonView<Present> {
+        var mPresent: Present
+        fun setWebUrl(url: String)
+        fun setPhone(phone: String)
+    }
 
-  interface Present : BasePresent {
-    fun upgrade()
-  }
+    interface Present : BasePresent {
+        fun upgrade()
+    }
 }

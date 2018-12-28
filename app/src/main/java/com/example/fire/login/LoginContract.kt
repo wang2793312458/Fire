@@ -8,14 +8,14 @@ import com.example.fire.common.CommonView
  * Created on 2018/10/8.
  */
 interface LoginContract {
-  interface View : CommonView<Present> {
-    var mPresent: Present
-    fun getPhone(): String
-    fun getPwd(): String
-    fun jumpMainActivity()
-  }
+    interface View : CommonView<Present> {
+        var mPresent: Present
+        fun getPhone(): String
+        fun getPwd(): String
+        fun jumpMainActivity()
+    }
 
-  interface Present : BasePresent {
-    fun login()
-  }
+    interface Present : BasePresent {
+        fun login()
+    }
 }

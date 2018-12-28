@@ -1,10 +1,9 @@
 package com.example.fire.home.adapter
 
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.RecyclerView.ViewHolder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.fire.R
 import com.example.fire.home.entity.HomeShopData
 import kotlinx.android.synthetic.main.item_home_shop.view.*
@@ -13,7 +12,7 @@ import kotlinx.android.synthetic.main.item_home_shop.view.*
  * on 2018/12/19
  * 简介：
  */
-class HomeShopAdapter : RecyclerView.Adapter<HomeShopAdapter.HomeShopViewHold>() {
+class HomeShopAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<HomeShopAdapter.HomeShopViewHold>() {
     var mList = arrayListOf<HomeShopData>()
 
     fun setList(list: ArrayList<HomeShopData>?) {

@@ -6,33 +6,30 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical"
-    tools:context=".common.MainActivity"
-    >
+    tools:context=".common.MainActivity">
+
     <FrameLayout
         android:id="@+id/home_fl_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="#E5E5E5"
-        />
+        android:background="#E5E5E5" />
 
-    <android.support.v4.app.FragmentTabHost
+    <androidx.fragment.app.FragmentTabHost
         android:id="@+id/tabhost"
         android:layout_width="match_parent"
         android:layout_height="49dp"
         android:background="@android:color/white"
-        android:paddingTop="8dp"
-        >
+        android:paddingTop="8dp">
 
         <FrameLayout
             android:id="@+id/tabcontent"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="0"
-            />
-    </android.support.v4.app.FragmentTabHost>
+            android:layout_weight="0" />
+    </androidx.fragment.app.FragmentTabHost>
 </LinearLayout>

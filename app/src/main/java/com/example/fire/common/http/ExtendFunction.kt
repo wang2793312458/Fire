@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.graphics.Bitmap
 import android.net.ConnectivityManager
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.text.TextUtils
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -70,7 +70,7 @@ fun EditText.setShowOrHidePassword(isShow: Boolean) {
  *
  * @return -1：没有网络  1：WIFI网络 3：net网络
  */
-fun Fragment.getNetType(): Int {
+fun androidx.fragment.app.Fragment.getNetType(): Int {
   var netType = -1
   val connMgr = activity!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
   val networkInfo = connMgr.activeNetworkInfo ?: return netType
@@ -86,7 +86,7 @@ fun Fragment.getNetType(): Int {
 /**
  * 判断是否有网
  */
-fun Fragment.haveNet(): Boolean {
+fun androidx.fragment.app.Fragment.haveNet(): Boolean {
   return getNetType() != -1
 }
 

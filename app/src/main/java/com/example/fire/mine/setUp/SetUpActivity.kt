@@ -9,94 +9,83 @@ import com.example.fire.common.Constants
 import com.example.fire.common.WebViewActivity
 import com.example.fire.login.LoginActivity
 import com.example.fire.mine.feedBack.FeedbackActivity
-import kotlinx.android.synthetic.main.activity_set_up.btnAbout
-import kotlinx.android.synthetic.main.activity_set_up.btnClear
-import kotlinx.android.synthetic.main.activity_set_up.btnContacts
-import kotlinx.android.synthetic.main.activity_set_up.btnExit
-import kotlinx.android.synthetic.main.activity_set_up.btnFeedback
-import kotlinx.android.synthetic.main.activity_set_up.btnUpgrade
-import org.jetbrains.anko.act
-import org.jetbrains.anko.alert
+import kotlinx.android.synthetic.main.activity_set_up.*
+import org.jetbrains.anko.*
 import org.jetbrains.anko.appcompat.v7.Appcompat
-import org.jetbrains.anko.cancelButton
-import org.jetbrains.anko.makeCall
-import org.jetbrains.anko.okButton
-import org.jetbrains.anko.sdk25.coroutines.onClick
-import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class SetUpActivity : CommonActivity(), SetUpContract.View {
-  override lateinit var mPresent: SetUpContract.Present
+    override lateinit var mPresent: SetUpContract.Present
 
-  private var mUrl: String? = null
-  private var servicePhone: String? = null
-  override fun getContentViewLayoutId(): Int {
-    return R.layout.activity_set_up
-  }
+    private var mUrl: String? = null
+    private var servicePhone: String? = null
+    override fun getContentViewLayoutId(): Int {
+        return R.layout.activity_set_up
+    }
 
-  override fun initData(savedInstanceState: Bundle?) {
-    SetUpPresent(this)
-    mPresent.start()
-    btnAbout.onClick {
+    override fun initData(savedInstanceState: Bundle?) {
+        SetUpPresent(this)
+        mPresent.start()
+        btnAbout.onClick {
             mUrl?.let {
-      startActivity<WebViewActivity>(
-          Constants.INTENT_WEB_VIEW_TITLE to "关于我们",
-          Constants.INTENT_WEB_URL to mUrl
-      )
-      }
-    }
-    btnClear.onClick {
-      toast(R.string.tips_clear_success)
+                startActivity<WebViewActivity>(
+                        Constants.INTENT_WEB_VIEW_TITLE to "关于我们",
+                        Constants.INTENT_WEB_URL to mUrl
+                )
+            }
+        }
+        btnClear.onClick {
+            toast(R.string.tips_clear_success)
 //            ToolsUtil.clearAllCache(getActivity(), getString(R.string.tips_clear_success))
+        }
+        btnContacts.onClick {
+            servicePhone?.let { makeCall(servicePhone!!) }
+        }
+        btnExit.onClick {
+            exit()
+        }
+        btnFeedback.onClick {
+            startActivity<FeedbackActivity>()
+        }
+        btnUpgrade.onClick {
+            mPresent.upgrade()
+        }
     }
-    btnContacts.onClick {
-      servicePhone?.let { makeCall(servicePhone!!) }
+
+    override fun showMessage(var1: String) {
+
     }
-    btnExit.onClick {
-      exit()
+
+    override fun showMessage(var1: Int) {
     }
-    btnFeedback.onClick {
-      startActivity<FeedbackActivity>()
+
+    override fun showProgress() {
     }
-    btnUpgrade.onClick {
-      mPresent.upgrade()
+
+    override fun hideProgress() {
     }
-  }
 
-  override fun showMessage(var1: String) {
+    override fun getActOrCtx(): Context {
+        return this
+    }
 
-  }
+    override fun setWebUrl(url: String) {
+        mUrl = url
+    }
 
-  override fun showMessage(var1: Int) {
-  }
+    override fun setPhone(phone: String) {
+        servicePhone = phone
+    }
 
-  override fun showProgress() {
-  }
-
-  override fun hideProgress() {
-  }
-
-  override fun getActOrCtx(): Context {
-    return act
-  }
-
-  override fun setWebUrl(url: String) {
-    mUrl = url
-  }
-
-  override fun setPhone(phone: String) {
-    servicePhone = phone
-  }
-
-  private fun exit() {
-    alert(Appcompat, R.string.tips_sure_exit, R.string.exit) {
-      okButton {
-        startActivity<LoginActivity>()
-        ActivityCollector.finishAll()
-        System.exit(0)
-      }
-      cancelButton {
-      }
-    }.show()
-  }
+    private fun exit() {
+        alert(Appcompat, R.string.tips_sure_exit, R.string.exit) {
+            okButton {
+                startActivity<LoginActivity>()
+                ActivityCollector.finishAll()
+                System.exit(0)
+            }
+            cancelButton {
+            }
+        }.show()
+    }
 }

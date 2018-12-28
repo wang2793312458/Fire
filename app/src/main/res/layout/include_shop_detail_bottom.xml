@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nsv_shop_detail_bottom"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -72,10 +71,10 @@
             android:id="@+id/rl_action"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="vertical"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:layout_marginTop="10dp"
             android:visibility="gone">
 
             <LinearLayout
@@ -129,8 +128,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:lineSpacingExtra="4dp"
             android:text="地址："
             android:textColor="@color/black3"
@@ -141,8 +140,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="6dp"
+            android:layout_marginRight="10dp"
             android:lines="1"
             android:text="营业时间：00:00 至 00:00"
             android:textColor="@color/black3"
@@ -248,9 +247,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="10dp"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
 
             <ImageView
                 android:id="@+id/iv_store_1"
@@ -278,4 +277,4 @@
             android:visibility="gone" />
     </LinearLayout>
 
-</android.support.v4.widget.NestedScrollView>
+</androidx.core.widget.NestedScrollView>

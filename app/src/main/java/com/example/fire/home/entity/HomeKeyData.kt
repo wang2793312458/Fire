@@ -5,7 +5,7 @@ package com.example.fire.home.entity
  * Created on 2018/10/19.
  */
 data class HomeKeyData(
-  val typeName: String,
-  val typePic: String,
-  val id: Int
+        val typeName: String,
+        val typePic: String,
+        val id: Int
 )

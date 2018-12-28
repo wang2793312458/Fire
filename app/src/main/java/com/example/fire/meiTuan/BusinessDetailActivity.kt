@@ -3,7 +3,6 @@ package com.example.fire.meiTuan
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
-import android.support.v4.view.ViewPager
 import android.view.View
 import android.widget.RelativeLayout
 import com.example.fire.R
@@ -70,7 +69,7 @@ class BusinessDetailActivity : CommonActivity() {
         }
         mi_shop_goods.navigator = commonNavigator
         ViewPagerHelper.bind(mi_shop_goods, vp_shop_goods)
-        vp_shop_goods.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        vp_shop_goods.addOnPageChangeListener(object : androidx.viewpager.widget.ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(p0: Int) {
             }
 

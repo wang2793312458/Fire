@@ -4,10 +4,11 @@ import android.content.Context
 import android.os.Bundle
 import com.example.fire.R
 import com.example.fire.common.CommonActivity
-import org.jetbrains.anko.act
 
 class MineAddressListActivity : CommonActivity(), MineAddressListContract.View {
+
     override lateinit var mPresent: MineAddressListContract.Present
+
     override fun getContentViewLayoutId(): Int {
         return R.layout.activity_mine_address_list
     }
@@ -31,6 +32,6 @@ class MineAddressListActivity : CommonActivity(), MineAddressListContract.View {
     }
 
     override fun getActOrCtx(): Context {
-        return act
+        return this
     }
 }

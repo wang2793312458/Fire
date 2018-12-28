@@ -8,8 +8,8 @@ import com.example.fire.common.Constants
 import com.example.fire.common.http.setShowOrHidePassword
 import com.example.fire.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_register2.*
-import org.jetbrains.anko.sdk25.coroutines.onCheckedChange
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onCheckedChange
+import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 

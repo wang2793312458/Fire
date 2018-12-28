@@ -11,8 +11,11 @@ import com.example.fire.mine.setUp.entity.AboutData
 import com.example.fire.mine.setUp.entity.MobilesData
 import com.example.fire.mine.setUp.entity.UpgradeData
 import io.reactivex.Observable
+import okhttp3.MultipartBody
 import retrofit2.http.Body
+import retrofit2.http.Multipart
 import retrofit2.http.POST
+import retrofit2.http.Part
 
 interface Api {
     companion object {
@@ -21,6 +24,16 @@ interface Api {
         const val API_UPLOAD_IMAGE = "http://www.taoshunda.com:80/fileupload/"
         const val API_GANK_API = "http://gank.io/api/"
     }
+
+    //上传图片
+    @Multipart
+    @POST("file/uploadImages")
+    fun upload(@Part file: MultipartBody.Part): Observable<List<String>>
+
+    //上传文件
+    @Multipart
+    @POST("file/uploadImages")
+    fun uploads(@Part files: List<MultipartBody.Part>): Observable<List<String>>
 
     // 获取消息
     @POST("push/findPushList")

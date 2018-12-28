@@ -6,69 +6,60 @@
     android:background="@color/background_color"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".mine.setUp.SetUpActivity"
-    >
+    tools:context=".mine.setUp.SetUpActivity">
 
-  <RelativeLayout style="@style/top_bar_layout">
+    <RelativeLayout style="@style/top_bar_layout">
 
-    <ImageButton
-        android:onClick="back"
-        android:src="@drawable/drw_button_back"
-        tools:ignore="OnClick"
-        style="@style/top_bar_btn_left"
-        />
+        <ImageButton
+            style="@style/top_bar_btn_left"
+            android:onClick="back"
+            android:src="@drawable/drw_button_back"
+            tools:ignore="OnClick" />
+
+        <TextView
+            style="@style/top_bar_title"
+            android:text="@string/set" />
+
+        <View style="@style/line_horizontal.title" />
+
+    </RelativeLayout>
 
     <TextView
-        android:text="@string/set"
-        style="@style/top_bar_title"
-        />
+        android:id="@+id/btnFeedback"
+        style="@style/mine_set_item_style"
+        android:layout_marginTop="10dp"
+        android:text="@string/feedback" />
 
-    <View style="@style/line_horizontal.title"/>
+    <TextView
+        android:id="@+id/btnAbout"
+        style="@style/mine_set_item_style"
+        android:text="@string/about_us" />
 
-  </RelativeLayout>
+    <TextView
+        android:id="@+id/btnClear"
+        style="@style/mine_set_item_style"
+        android:text="@string/clear" />
 
-  <TextView
-      android:id="@+id/btnFeedback"
-      android:layout_marginTop="10dp"
-      android:text="@string/feedback"
-      style="@style/mine_set_item_style"
-      />
+    <TextView
+        android:id="@+id/btnUpgrade"
+        style="@style/mine_set_item_style"
+        android:text="@string/check_upgrade" />
 
-  <TextView
-      android:id="@+id/btnAbout"
-      android:text="@string/about_us"
-      style="@style/mine_set_item_style"
-      />
+    <TextView
+        android:id="@+id/btnContacts"
+        style="@style/mine_set_item_style"
+        android:text="@string/contacts_service" />
 
-  <TextView
-      android:id="@+id/btnClear"
-      android:text="@string/clear"
-      style="@style/mine_set_item_style"
-      />
-
-  <TextView
-      android:id="@+id/btnUpgrade"
-      android:text="@string/check_upgrade"
-      style="@style/mine_set_item_style"
-      />
-
-  <TextView
-      android:id="@+id/btnContacts"
-      android:text="@string/contacts_service"
-      style="@style/mine_set_item_style"
-      />
-
-  <Button
-      android:id="@+id/btnExit"
-      android:layout_width="match_parent"
-      android:layout_height="@dimen/button_height"
-      android:layout_marginLeft="30dp"
-      android:layout_marginRight="30dp"
-      android:layout_marginTop="20dp"
-      android:background="@drawable/shape_button_exit"
-      android:text="@string/exit_account"
-      android:textColor="@android:color/white"
-      android:textSize="@dimen/button_font_size"
-      />
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/shape_button_exit"
+        android:text="@string/exit_account"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/button_font_size" />
 
 </LinearLayout>

@@ -1,6 +1,5 @@
 package com.example.fire.login
 
-import android.annotation.SuppressLint
 import com.example.fire.R
 import com.example.fire.common.http.HttpFactory
 
@@ -10,33 +9,32 @@ import com.example.fire.common.http.HttpFactory
  */
 class LoginPresent(private val mView: LoginContract.View) : LoginContract.Present {
 
-  init {
-    mView.mPresent = this
-  }
-
-  override fun start() {
-  }
-
-  @SuppressLint("CheckResult")
-  override fun login() {
-    if (mView.getPhone().isEmpty()) {
-      mView.showMessage(R.string.tips_please_input_phone)
-      return
+    init {
+        mView.mPresent = this
     }
-    if (mView.getPwd().isEmpty()) {
-      mView.showMessage(R.string.tips_please_input_password)
-      return
+
+    override fun start() {
     }
-    HttpFactory.getInstance()
-        .login(mapOf("phone" to mView.getPhone(), "password" to mView.getPwd(), "type" to "1"))
-        .compose(HttpFactory.schedulers())
-        .doOnSubscribe { mView.showProgress() }
-        .doFinally { mView.hideProgress() }
-        .subscribe({
-          mView.showMessage(R.string.tips_success_login)
-          mView.jumpMainActivity()
-        }, {
-          mView.showMessage(it.message!!)
-        })
-  }
+
+    override fun login() {
+        if (mView.getPhone().isEmpty()) {
+            mView.showMessage(R.string.tips_please_input_phone)
+            return
+        }
+        if (mView.getPwd().isEmpty()) {
+            mView.showMessage(R.string.tips_please_input_password)
+            return
+        }
+        HttpFactory.getInstance()
+                .login(mapOf("phone" to mView.getPhone(), "password" to mView.getPwd(), "type" to "1"))
+                .compose(HttpFactory.schedulers())
+                .doOnSubscribe { mView.showProgress() }
+                .doFinally { mView.hideProgress() }
+                .subscribe({
+                    mView.showMessage(R.string.tips_success_login)
+                    mView.jumpMainActivity()
+                }, {
+                    mView.showMessage(it.message!!)
+                })
+    }
 }

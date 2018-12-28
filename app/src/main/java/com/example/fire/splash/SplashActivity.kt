@@ -9,27 +9,27 @@ import com.example.fire.login.LoginActivity
 import org.jetbrains.anko.startActivity
 
 class SplashActivity : CommonActivity() {
-  private lateinit var time: CountDownTimer
-  private var isLogin = true
+    private lateinit var time: CountDownTimer
+    private var isLogin = true
 
-  override fun getContentViewLayoutId(): Int {
-    return R.layout.activity_splash
-  }
-
-  override fun initData(savedInstanceState: Bundle?) {
-    time = object : CountDownTimer(2 * 1000, 1000) {
-      override fun onFinish() {
-        if (isLogin) {
-          startActivity<LoginActivity>()
-          finish()
-        } else {
-          startActivity<MainActivity>()
-          finish()
-        }
-      }
-
-      override fun onTick(millisUntilFinished: Long) {}
+    override fun getContentViewLayoutId(): Int {
+        return R.layout.activity_splash
     }
-    time.start()
-  }
+
+    override fun initData(savedInstanceState: Bundle?) {
+        time = object : CountDownTimer(2 * 1000, 1000) {
+            override fun onFinish() {
+                if (isLogin) {
+                    startActivity<LoginActivity>()
+                    finish()
+                } else {
+                    startActivity<MainActivity>()
+                    finish()
+                }
+            }
+
+            override fun onTick(millisUntilFinished: Long) {}
+        }
+        time.start()
+    }
 }

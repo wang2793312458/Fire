@@ -1,6 +1,5 @@
 package com.example.fire.home
 
-import android.support.v7.widget.RecyclerView
 import com.example.fire.common.BasePresent
 import com.example.fire.common.CommonView
 
@@ -9,11 +8,11 @@ import com.example.fire.common.CommonView
  * Created on 2018/10/19.
  */
 interface HomeContract {
-  interface View : CommonView<Present> {
-    var mPresent: Present
-  }
+    interface View : CommonView<Present> {
+        var mPresent: Present
+    }
 
-  interface Present : BasePresent {
-    fun attachRecyclerView(recyclerView: RecyclerView)
-  }
+    interface Present : BasePresent {
+        fun attachRecyclerView(recyclerView: androidx.recyclerview.widget.RecyclerView)
+    }
 }

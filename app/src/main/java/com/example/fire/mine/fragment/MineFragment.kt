@@ -8,8 +8,8 @@ import com.example.fire.common.Api
 import com.example.fire.common.CommonFragment
 import com.example.fire.mine.setUp.SetUpActivity
 import kotlinx.android.synthetic.main.fragment_mine.*
-import org.jetbrains.anko.sdk25.coroutines.onClick
-import org.jetbrains.anko.support.v4.ctx
+import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.support.v4.act
 import org.jetbrains.anko.support.v4.startActivity
 
 class MineFragment : CommonFragment(), MineContract.View {
@@ -33,7 +33,7 @@ class MineFragment : CommonFragment(), MineContract.View {
     }
 
     override fun setHeadPic(headPic: String) {
-        Glide.with(this)
+        Glide.with(activity)
                 .load(Api.API_LOAD_IMAGE + headPic)
                 .apply(RequestOptions().centerCrop())
                 .into(ivAvatar)
@@ -57,6 +57,6 @@ class MineFragment : CommonFragment(), MineContract.View {
     }
 
     override fun getActOrCtx(): Context {
-        return ctx
+        return act
     }
 }

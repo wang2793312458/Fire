@@ -4,73 +4,64 @@
     android:layout_height="wrap_content"
     android:background="#f0eff5"
     android:orientation="vertical"
-    android:padding="16dp"
-    >
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@drawable/me_message_item_bg"
-      android:orientation="vertical"
-      android:padding="16dp"
-      >
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:textSize="16sp"
-        />
-
-    <android.support.v4.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="16dp"
-        />
-
-    <ImageView
-        android:id="@+id/ivImage"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/img_1"
-        />
-
-    <android.support.v4.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        />
-
-    <TextView
-        android:id="@+id/tvSummary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:maxLines="3"
-        android:textSize="14sp"
-        />
-
-    <android.support.v4.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        />
-
-    <View style="@style/line_horizontal"/>
-
-    <android.support.v4.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        />
-
-    <TextView
-        android:id="@+id/tvDetail"
-        android:drawableRight="@mipmap/right"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:text="@string/str_look_detail"
-        android:textSize="14sp"
-        />
+        android:background="@drawable/me_message_item_bg"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-  </LinearLayout>
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="16sp" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/img_1" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <TextView
+            android:id="@+id/tvSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textSize="14sp" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <View style="@style/line_horizontal" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <TextView
+            android:id="@+id/tvDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/right"
+            android:gravity="center_vertical"
+            android:text="@string/str_look_detail"
+            android:textSize="14sp" />
+
+    </LinearLayout>
 </LinearLayout>

@@ -8,7 +8,7 @@ import com.example.fire.R
 import com.example.fire.common.CommonActivity
 import com.example.fire.common.Constants
 import kotlinx.android.synthetic.main.activity_register1.*
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
@@ -28,12 +28,9 @@ class Register1Activity : CommonActivity(), RegisterContract.View, OnClickListen
 
     override fun initData(savedInstanceState: Bundle?) {
         RegisterPresent(this)
-        tvCode.setOnClickListener {
+        tvCode.onClick {
             mPresent.getCode()
         }
-//    tvCode.onClick {
-//      mPresent.getCode()
-//    }
         btnNext.onClick {
             mPresent.checkCode()
         }

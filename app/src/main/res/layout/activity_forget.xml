@@ -5,102 +5,92 @@
     android:background="@android:color/white"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".forget.ForgetActivity"
-    >
+    tools:context=".forget.ForgetActivity">
 
-  <RelativeLayout style="@style/top_bar_layout">
+    <RelativeLayout style="@style/top_bar_layout">
 
-    <ImageButton
-        android:onClick="back"
-        android:src="@drawable/drw_button_back"
-        style="@style/top_bar_btn_left"
-        tools:ignore="OnClick"
-        />
+        <ImageButton
+            style="@style/top_bar_btn_left"
+            android:onClick="back"
+            android:src="@drawable/drw_button_back"
+            tools:ignore="OnClick" />
 
-    <TextView
-        android:text="@string/forget"
-        style="@style/top_bar_title"
-        />
+        <TextView
+            style="@style/top_bar_title"
+            android:text="@string/forget" />
 
-    <View style="@style/line_horizontal.title"/>
+        <View style="@style/line_horizontal.title" />
 
-  </RelativeLayout>
+    </RelativeLayout>
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="30dp"
-      android:gravity="center_vertical"
-      android:paddingLeft="45dp"
-      android:paddingRight="45dp"
-      >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp">
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/tips_please_input_phone"
+            android:inputType="phone"
+            android:paddingLeft="5dp"
+            android:paddingTop="8dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/font_color_black87"
+            android:textSize="@dimen/font_size_14" />
+
+        <TextView
+            android:id="@+id/tvCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/get_verify"
+            android:textColor="@color/get_verify_text_color_set"
+            android:textSize="@dimen/font_size_12" />
+    </LinearLayout>
+
+    <View
+        style="@style/line_horizontal"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp" />
 
     <EditText
-        android:id="@+id/etPhone"
-        android:layout_width="0dp"
+        android:id="@+id/etCode"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_marginTop="20dp"
         android:background="@null"
-        android:hint="@string/tips_please_input_phone"
+        android:hint="@string/tips_please_input_short_sms"
         android:inputType="phone"
-        android:paddingBottom="8dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
+        android:paddingLeft="50dp"
         android:paddingTop="8dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="8dp"
         android:textColor="@color/font_color_black87"
-        android:textSize="@dimen/font_size_14"
-        />
+        android:textSize="@dimen/font_size_14" />
 
-    <TextView
-        android:id="@+id/tvCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="8dp"
-        android:paddingTop="8dp"
-        android:text="@string/get_verify"
-        android:textColor="@color/get_verify_text_color_set"
-        android:textSize="@dimen/font_size_12"
-        />
-  </LinearLayout>
+    <View
+        style="@style/line_horizontal"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp" />
 
-  <View
-      android:layout_marginLeft="45dp"
-      android:layout_marginRight="45dp"
-      style="@style/line_horizontal"
-      />
-
-  <EditText
-      android:id="@+id/etCode"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="20dp"
-      android:background="@null"
-      android:hint="@string/tips_please_input_short_sms"
-      android:inputType="phone"
-      android:paddingBottom="8dp"
-      android:paddingLeft="50dp"
-      android:paddingRight="50dp"
-      android:paddingTop="8dp"
-      android:textColor="@color/font_color_black87"
-      android:textSize="@dimen/font_size_14"
-      />
-
-  <View
-      android:layout_marginLeft="45dp"
-      android:layout_marginRight="45dp"
-      style="@style/line_horizontal"
-      />
-
-  <Button
-      android:id="@+id/btnNext"
-      android:layout_width="match_parent"
-      android:layout_height="@dimen/button_height"
-      android:layout_marginLeft="45dp"
-      android:layout_marginRight="45dp"
-      android:layout_marginTop="30dp"
-      android:background="@drawable/shape_button"
-      android:text="@string/next_step"
-      android:textColor="@android:color/white"
-      android:textSize="@dimen/button_font_size"
-      />
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/shape_button"
+        android:text="@string/next_step"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/button_font_size" />
 </LinearLayout>

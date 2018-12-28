@@ -1,10 +1,9 @@
 package com.example.fire.home.adapter
 
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.RecyclerView.ViewHolder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.fire.R
@@ -17,7 +16,7 @@ import kotlinx.android.synthetic.main.item_message.view.*
  * @author by 王小智
  * Created on 2018/10/19.
  */
-class HomeKeyAdapter : RecyclerView.Adapter<HomeKeyViewHold>() {
+class HomeKeyAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<HomeKeyViewHold>() {
     private var list = arrayListOf<HomeKeyData>()
 
     fun setList(list: ArrayList<HomeKeyData>?) {

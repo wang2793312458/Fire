@@ -1,19 +1,18 @@
 package com.example.fire.mine.address.list.adapter
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.fire.R
 import com.example.fire.mine.address.entity.MineAddressData
 import kotlinx.android.synthetic.main.item_address.view.*
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 /**
  * @author by 王小智
  * Created on 2018/10/19.
  */
-class MineAddressListAdapter : RecyclerView.Adapter<MineAddressListAdapter.MineAddressListViewHolder>() {
+class MineAddressListAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<MineAddressListAdapter.MineAddressListViewHolder>() {
     private var list = arrayListOf<MineAddressData>()
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MineAddressListViewHolder {
@@ -47,7 +46,7 @@ class MineAddressListAdapter : RecyclerView.Adapter<MineAddressListAdapter.MineA
         }
     }
 
-    inner class MineAddressListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class MineAddressListViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView)
 
     private var listener: onKotlinItemClickListener? = null
 

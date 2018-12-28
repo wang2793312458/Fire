@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.example.fire.R
 import com.example.fire.common.CommonActivity
 import kotlinx.android.synthetic.main.activity_feedback.*
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class FeedbackActivity : CommonActivity(), FeedBackContract.View {
 

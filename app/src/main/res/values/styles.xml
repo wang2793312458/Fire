@@ -193,6 +193,7 @@
     <style name="grade_fire_tv_style.font_size">
         <item name="android:textSize">@dimen/font_size_13</item>
     </style>
+
     <style name="cm_list_view">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

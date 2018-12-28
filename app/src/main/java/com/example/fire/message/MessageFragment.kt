@@ -1,7 +1,7 @@
 package com.example.fire.message
 
 import android.content.Context
-import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
 import com.example.fire.R
 import com.example.fire.common.CommonFragment
 import kotlinx.android.synthetic.main.include_recycle_refresh.*

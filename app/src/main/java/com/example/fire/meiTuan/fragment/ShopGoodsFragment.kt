@@ -1,6 +1,5 @@
 package com.example.fire.meiTuan.fragment
 
-import android.support.v4.app.Fragment
 import com.example.fire.R
 import com.example.fire.common.CommonFragment
 
@@ -16,7 +15,7 @@ class ShopGoodsFragment : CommonFragment() {
     override fun initData() {
     }
 
-    fun getInstance(companyId: String): Fragment {
+    fun getInstance(companyId: String): androidx.fragment.app.Fragment {
         return ShopGoodsFragment()
     }
 }
