@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PlayerDemo</string>
+    <string name="app_name">好玩</string>
 
     <string name="empty_message">没有数据\n点击屏幕重试</string>
     <string name="load_failed">加载失败\n点击屏幕重试</string>

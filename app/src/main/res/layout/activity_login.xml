@@ -43,7 +43,7 @@
             android:inputType="phone"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:text="18563773532"
+            android:text="15098725394"
             android:textColor="@color/font_color_black87"
             android:textSize="@dimen/font_size_14" />
     </LinearLayout>
