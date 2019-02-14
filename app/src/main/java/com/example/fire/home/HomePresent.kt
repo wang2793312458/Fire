@@ -1,6 +1,8 @@
 package com.example.fire.home
 
 import android.annotation.SuppressLint
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.fire.common.Constants
 import com.example.fire.common.http.HttpFactory
 import com.example.fire.home.adapter.HomeKeyAdapter
@@ -44,11 +46,11 @@ class HomePresent(private val mView: HomeContract.View) : HomeContract.Present {
                 .subscribe()
     }
 
-    override fun attachRecyclerView(recyclerView: androidx.recyclerview.widget.RecyclerView) {
-        recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(mView.getActOrCtx())
+    override fun attachRecyclerView(recyclerView: RecyclerView) {
+        recyclerView.layoutManager = LinearLayoutManager(mView.getActOrCtx())
         recyclerView.adapter = mAdapter
-        recyclerView.addOnScrollListener(object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (RecyclerViewUtil.isScrollBottom(recyclerView) &&
                         recyclerView.adapter!!.itemCount % Constants.PAGE_SIZE == 0) {

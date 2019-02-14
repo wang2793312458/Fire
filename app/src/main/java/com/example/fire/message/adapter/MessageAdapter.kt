@@ -3,6 +3,7 @@ package com.example.fire.message.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -16,7 +17,7 @@ import kotlinx.android.synthetic.main.item_message.view.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.startActivity
 
-class MessageAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<MessageHolder>() {
+class MessageAdapter : RecyclerView.Adapter<MessageHolder>() {
     private var list = arrayListOf<MessageData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): MessageHolder {

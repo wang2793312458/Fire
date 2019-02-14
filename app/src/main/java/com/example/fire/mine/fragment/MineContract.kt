@@ -15,7 +15,5 @@ interface MineContract {
         fun setSex(id: Int)
     }
 
-    interface Present : BasePresent {
-
-    }
+    interface Present : BasePresent
 }

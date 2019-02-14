@@ -1,5 +1,6 @@
 package com.example.fire.mine.address.list
 
+import androidx.recyclerview.widget.RecyclerView
 import com.example.fire.common.BasePresent
 import com.example.fire.common.CommonView
 
@@ -14,6 +15,6 @@ interface MineAddressListContract {
     }
 
     interface Present : BasePresent {
-        fun attachRecyclerView(recyclerView: androidx.recyclerview.widget.RecyclerView)
+        fun attachRecyclerView(recyclerView: RecyclerView)
     }
 }

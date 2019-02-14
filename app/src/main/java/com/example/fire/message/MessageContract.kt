@@ -1,5 +1,6 @@
 package com.example.fire.message
 
+import androidx.recyclerview.widget.RecyclerView
 import com.example.fire.common.BasePresent
 import com.example.fire.common.CommonView
 
@@ -10,6 +11,6 @@ interface MessageContract {
 
     interface Present : BasePresent {
         fun refresh()
-        fun attachRecyclerView(recyclerView: androidx.recyclerview.widget.RecyclerView)
+        fun attachRecyclerView(recyclerView: RecyclerView)
     }
 }

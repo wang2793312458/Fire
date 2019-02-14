@@ -1,6 +1,8 @@
 package com.example.fire.mine.address.list
 
 import android.annotation.SuppressLint
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.fire.common.http.HttpFactory
 import com.example.fire.mine.address.list.adapter.MineAddressListAdapter
 import com.example.fire.mine.address.list.adapter.MineAddressListAdapter.onKotlinItemClickListener
@@ -35,12 +37,11 @@ class MineAddressListPresent(private val mView: MineAddressListContract.View) : 
                 })
     }
 
-    override fun attachRecyclerView(recyclerView: androidx.recyclerview.widget.RecyclerView) {
-        recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(mView.getActOrCtx())
+    override fun attachRecyclerView(recyclerView: RecyclerView) {
+        recyclerView.layoutManager = LinearLayoutManager(mView.getActOrCtx())
         recyclerView.adapter = mAdapter
         mAdapter.setOnItemClickListener(object : onKotlinItemClickListener {
             override fun delete(position: Int) {
-
             }
         })
     }

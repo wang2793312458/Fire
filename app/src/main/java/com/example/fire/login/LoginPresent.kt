@@ -1,5 +1,6 @@
 package com.example.fire.login
 
+import android.annotation.SuppressLint
 import com.example.fire.R
 import com.example.fire.common.http.HttpFactory
 
@@ -16,6 +17,7 @@ class LoginPresent(private val mView: LoginContract.View) : LoginContract.Presen
     override fun start() {
     }
 
+    @SuppressLint("CheckResult") //该注解意味着需要对方法的返回值进行处理
     override fun login() {
         if (mView.getPhone().isEmpty()) {
             mView.showMessage(R.string.tips_please_input_phone)
